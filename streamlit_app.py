@@ -14,7 +14,7 @@ dataframe = pd.read_csv(
         "Price",
         "Latitude",
         "Longitude",
-        "Miles from chosen location",
+        "Meters from chosen location",
         "Location",
     ],
 )
@@ -46,7 +46,7 @@ fig = px.scatter_mapbox(
     height=500,
     width=800,
     hover_name="Price",
-    hover_data=["Miles from chosen location", "Location"],
+    hover_data=["Meters from chosen location", "Location"],
     labels={"color": "Locations"},
 )
 fig.update_geos(center=dict(lat=dataframe.iloc[0][2], lon=dataframe.iloc[0][3]))
